@@ -6,20 +6,3 @@ In this code, events[0].end.dateTime and events[0].start.dateTime yields the end
 
 The date/time yielded in this way is altered in a few ways. 1.) there is a conversion from military time to civillian time (assigned varaible "cTime"), leading 0s are dropped and am or pm is added appropriately.
 
-Testing oracle:
-
-#####################################################################################################
-##     if today's hours are:  ||     events[0].end.dateTime   ||     final output:               #### 
-##                            ||     evemts[0].start.dateTime ||                                 ####
-##-----------------------------------------------------------------------------------------------####
-##       7:30am - 9:00pm      ||   2017-03-07T21:00:00-08:00  ||  Today's Hours: 7:30am-9:00pm   ####
-##                            ||   2017-03-07T07:30:00-08:00  ||                                 ####
-##-----------------------------------------------------------------------------------------------####
-##       11:00am - 4:00pm     ||   2017-03-07T11:00:00-08:00  ||  Today's Hours: 7:30am-9:00pm   ####
-##                            ||   2017-03-07T16:00:00-08:00  ||                                 ####
-##-----------------------------------------------------------------------------------------------####
-##        closed              || *some date other than today* ||      Currently closed.          #### 
-##                                                                    See Libarary Hours         ####
-#####################################################################################################
-
-*This final output excludes the <a href></a> tags that are added around the text*
